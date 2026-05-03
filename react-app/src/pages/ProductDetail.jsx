@@ -13,7 +13,7 @@ function ProductDetail() {
         <h1> product {product?.title}</h1>
         <p>{product?.description}</p>
         <p>{product?.price}</p>
-        <h1>{product.image}</h1>
+        <h1><img src={product?.image} alt={product?.title} /></h1>
 
 
     </div>

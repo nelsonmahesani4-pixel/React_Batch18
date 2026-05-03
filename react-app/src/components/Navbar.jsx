@@ -75,3 +75,13 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+// when we use navlink, Link, useNavigate()
+// Link --> to navigate between pages without reloading the page  or simple routing custom style for active link
+// NavLink --> to navigate between pages without reloading the page and also gives us active class to style the active link
+// or builten style with react router
+// useNavigate() --> to navigate programmatically (on button click, after form submission, etc.)
+// when we don't need to interact witn button or link and just want to navigate to another page we can use useNavigate() hook
+// useNavigate() returns a function that we can call to navigate to another page
+// const navigate = useNavigate();
+// navigate('/about'); // this will navigate to the about page
