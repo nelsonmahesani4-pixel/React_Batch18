@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter , Routes, Route } from 'react-router-dom';
 import Home from '../pages/Home';
 import Products from '../pages/Product';    
+import ProductDetail from '../pages/ProductDetail';
 function Routing() {
   return (
     <div>
@@ -9,7 +10,8 @@ function Routing() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Home/>}/>
-                <Route path="/product" element={<Products/>}/>
+                <Route path="/products" element={<Products/>}/>
+                <Route path="/products/:title" element={<ProductDetail/>}/>
             </Routes>
         </BrowserRouter>
 

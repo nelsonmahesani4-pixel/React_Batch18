@@ -10,7 +10,11 @@ function Product() {
       {
         products.map((product)=>{
           return(
+           <div key={product.title}>
+            <Link   to={`/products/${product.title}`} >
               <ProductCard product={product} />
+            </Link>
+           </div>
           )
         })
       }
