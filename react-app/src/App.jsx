@@ -51,10 +51,8 @@
 
 
 // --> useState functional component
-import React from 'react'
+import React, { useReducer } from 'react'
 import { useState } from 'react'
-
-
 function App() { 
   const myStyle = {
         backgroundColor : "green",
@@ -70,12 +68,28 @@ function App() {
         setMyName(e.target.value)
         console.log("Change ", e.target.value)
        }
-       
+       function reducer(action, count){
+        if(action === "increment"){
+          return count + 1
+        }
+        else if(action === "decrement"){
+          return count - 1
+        }
+        else{
+          return count
+        }
+       }
 
+       const [count, setCount] = useState(0);
+       const[counter, dispatch] = useReducer(reducer,0)
   return (
     <div>
       <h1>{myName}</h1>
       <br />
+      <h1>{counter : count+1}</h1>
+      <br />
+      <button onClick={()=>dispatch({type: "increment"})} style={myStyle}>Increment</button>
+      <button onClick={()=>dispatch({type: "decrement"})} style={myStyle}>Decrement</button>
 
       <button
         onClick={()=>setMyName(myName +"Mahesani")}
@@ -86,5 +100,4 @@ function App() {
     </div>
   )
 }
-
 export default App
