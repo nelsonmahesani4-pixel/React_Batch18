@@ -107,43 +107,80 @@
 // useEffect --> Handle side effects (API calls, event listeners, DOM updates)
 
 // useEffect
-import React, { useEffect, useState } from 'react'
+import React, {  createContext, useState } from 'react'
 
+
+// function App() {
+//   const buttonStyle = {
+//     backgroundColor : "blue",
+//     color : "white",
+//     padding : "10px",
+//     borderRadius : "5px",
+//     border : "none",
+//     cursor : "pointer"
+//   }
+//   const [age,setAge] = useState(2);
+//   const [doubleAge,setDoubleAge] = useState(2);
+
+// useEffect(()=>{ 
+//   setTimeout(()=>{
+
+// setDoubleAge((doubleAge)=>doubleAge * 2)
+// },2000)
+// },[age]) // dependency array
+//   return (
+//     <div>
+//         <h1>Use Effect</h1>
+//         <p>My Age is : {age}</p>
+
+//         <br />
+//         <h1>Double Age: {doubleAge}</h1>
+
+//         <button onClick={()=>setAge(age + 1)}
+//           style={buttonStyle}
+//         >
+//           Update Age
+//         </button>
+        
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+// useContext --> Manage global state across components without prop drilling
 
 function App() {
-  const buttonStyle = {
-    backgroundColor : "blue",
-    color : "white",
-    padding : "10px",
-    borderRadius : "5px",
-    border : "none",
-    cursor : "pointer"
-  }
-  const [age,setAge] = useState(2);
-  const [doubleAge,setDoubleAge] = useState(2);
+  const [myName, setMyName] = useState("Rohit")
 
-useEffect(()=>{ 
-  setTimeout(()=>{
-
-setDoubleAge((doubleAge)=>doubleAge * 2)
-},2000)
-},[age]) // dependency array
+   const myNameContext = createContext(myName)
   return (
+    <myNameContext.Provider value={myName}>
+      <div>
+        <App2 />
+        <h1>my Name is : {myName} </h1>
+      </div>
+    </myNameContext.Provider>
+  )
+}
+export function App2({myName}){
+  
+  return(
     <div>
-        <h1>Use Effect</h1>
-        <p>My Age is : {age}</p>
-
-        <br />
-        <h1>Double Age: {doubleAge}</h1>
-
-        <button onClick={()=>setAge(age + 1)}
-          style={buttonStyle}
-        >
-          Update Age
-        </button>
-        
-    </div>
+      <App3 myName={myName} />
+    </div>  
   )
 }
 
 export default App
+
+export function App3({myName}){
+  return(
+    <div>
+      <h1>My Name is : {myName}</h1>
+    </div>
+  )
+}
+
