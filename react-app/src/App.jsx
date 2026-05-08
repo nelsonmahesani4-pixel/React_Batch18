@@ -5,10 +5,10 @@
 //   return (
 //     <div className="App">
 
-//       {/* product data
-      
-//       <Routing/>
-//        */}
+//        product data
+    
+//     <Routing/>
+  
 
 //     </div>
 //   );
@@ -107,7 +107,7 @@
 // useEffect --> Handle side effects (API calls, event listeners, DOM updates)
 
 // useEffect
-import React, {  createContext, useState } from 'react'
+// import React, {  createContext, useState } from 'react'
 
 
 // function App() {
@@ -152,35 +152,56 @@ import React, {  createContext, useState } from 'react'
 
 // useContext --> Manage global state across components without prop drilling
 
-function App() {
-  const [myName, setMyName] = useState("Rohit")
+// function App() {
+//   const [myName, setMyName] = useState("Rohit")
 
-   const myNameContext = createContext(myName)
-  return (
-    <myNameContext.Provider value={myName}>
-      <div>
-        <App2 />
-        <h1>my Name is : {myName} </h1>
-      </div>
-    </myNameContext.Provider>
-  )
-}
-export function App2({myName}){
+//    const myNameContext = createContext(myName)
+//   return (
+//     <myNameContext.Provider value={myName}>
+//       <div>
+//         <App2 />
+//         <h1>my Name is : {myName} </h1>
+//       </div>
+//     </myNameContext.Provider>
+//   )
+// }
+// export function App2({myName}){
   
-  return(
-    <div>
-      <App3 myName={myName} />
-    </div>  
-  )
-}
+//   return(
+//     <div>
+//       <App3 myName={myName} />
+//     </div>  
+//   )
+// }
 
-export default App
+// export default App
 
-export function App3({myName}){
-  return(
+// export function App3({myName}){
+//   return(
+//     <div>
+//       <h1>My Name is : {myName}</h1>
+//     </div>
+//   )
+// }
+
+import React, { createContext, useState } from 'react'
+import Component1 from './components/Component1'
+import Component2 from './components/Component2'
+import Component3 from './components/Component3'
+export const NameContext = createContext()
+function App() {
+  const  [myName, setMyName] = useState("Rohit")
+  return (
     <div>
-      <h1>My Name is : {myName}</h1>
+         <NameContext.Provider value={myName}>
+         <h1>My Name is : {myName}</h1>
+        <Component1 />  
+        <Component2 />
+        <Component3 />
+        </NameContext.Provider>
+      
     </div>
   )
 }
 
+export default App
