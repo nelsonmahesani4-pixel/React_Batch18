@@ -17,8 +17,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
+
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -41,5 +44,8 @@
     "autoprefixer": "^10.5.0",
     "postcss": "^8.5.13",
     "tailwindcss": "^4.2.4"
-  }
+  },
+
+  "homepage": "https://nelsonmahesani4-pixel.github.io/React_Batch18/"
 }
+

@@ -45,9 +45,11 @@ export default function Navbar() {
 
         {/* CTA */}
         <div className="navbar__actions">
-          <a href="#menu" className="btn-primary navbar__cta">
+          <Link to="/Login">
+          <a href="/Login" className="btn-primary navbar__cta">
             Order Now
           </a>
+          </Link>
           <button
             className={`navbar__hamburger ${menuOpen ? "open" : ""}`}
             onClick={() => setMenuOpen(!menuOpen)}
