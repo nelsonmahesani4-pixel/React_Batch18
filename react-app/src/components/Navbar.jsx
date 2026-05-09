@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
  
 
 const navLinks = [
@@ -6,7 +7,7 @@ const navLinks = [
   { label: "Menu", href: "#menu" },
   { label: "Featured", href: "#featured" },
   { label: "Reviews", href: "#reviews" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/Login" },
 ];
 
 export default function Navbar() {
@@ -69,9 +70,11 @@ export default function Navbar() {
             {link.label}
           </a>
         ))}
+        <Link to="/Login">
         <a href="#menu" className="btn-primary" onClick={() => setMenuOpen(false)}>
           Order Now
         </a> 
+        </Link>
       </div>
       <div>
         <style>
