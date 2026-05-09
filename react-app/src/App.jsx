@@ -1,5 +1,5 @@
 // import Product from "./pages/Product";
-// import Routing from "./route/Routing";
+
 // import "./App.css";
 // function App() {
 //   return (
@@ -7,7 +7,7 @@
 
 //        product data
     
-//     <Routing/>
+    
   
 
 //     </div>
@@ -184,24 +184,48 @@
 //   )
 // }
 
-import React, { createContext, useState } from 'react'
-import Component1 from './components/Component1'
-import Component2 from './components/Component2'
-import Component3 from './components/Component3'
-export const NameContext = createContext()
-function App() {
-  const  [myName, setMyName] = useState("Rohit")
-  return (
-    <div>
-         <NameContext.Provider value={myName}>
-         <h1>My Name is : {myName}</h1>
-        <Component1 />  
-        <Component2 />
-        <Component3 />
-        </NameContext.Provider>
+// import React, { createContext, useState } from 'react'
+// import Component1 from './components/Component1'
+// import Component2 from './components/Component2'
+// import Component3 from './components/Component3'
+// export const NameContext = createContext()
+// function App() {
+//   const  [myName, setMyName] = useState("Rohit")
+//   return (
+//     <div>
+//          <NameContext.Provider value={myName}>
+//          <h1>My Name is : {myName}</h1>
+//         <Component1 />  
+//         <Component2 />
+//         <Component3 />
+//         </NameContext.Provider>
       
+//     </div>
+//   )
+// }
+
+// export default App
+
+import React from "react";
+import Routing from "./route/Routing";
+// import Navbar from "./components/Navbar";
+// import Hero from "./components/Hero";
+// import Categories from "./components/Categories";
+// import FeaturedDishes from "./components/FeaturedDishes";
+// import MenuSection from "./components/MenuSection";
+// import Testimonials from "./components/Testimonials";
+// import Newsletter from "./components/Newsletter";
+// import Footer from "./components/Footer";
+// import "./styles/global.css";
+ 
+export default function App() {
+  // const [activeCategory, setActiveCategory] = useState("All");
+
+  return (
+    <div className="app">
+      <Routing />
+     
     </div>
-  )
+  );
 }
 
-export default App

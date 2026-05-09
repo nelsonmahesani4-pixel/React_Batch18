@@ -1,26 +1,29 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
-import Navbar from '../components/Navbar';
-import About from './About';
-import HeroSection from '../components/HeroSection';
-import FeatureSection from '../components/FeatureSection';
-import FaqSection from '../components/FaqSection';
-import ProductImg from '../components/ProductImg';
-import Footer from '../components/Footer';
-
+import React, { useState } from "react";
+import Navbar from "../components/Navbar";
+import Hero from "../components/Hero";
+import Categories from "../components/Categories";
+import FeaturedDishes from "../components/FeaturedDishes";
+import MenuSection from "../components/MenuSection";
+import Testimonials from "../components/Testimonials";
+import Newsletter from "../components/Newsletter";
+import Footer from "../components/Footer";
+import "../styles/global.css";
+ 
 
 function Home() {
+  const [activeCategory, setActiveCategory] = useState("All");
   return (
     <div>
-        <Navbar />
-        <HeroSection />
-        <About  />
-        <ProductImg />
-        <FeatureSection />
-        <FaqSection />
-        <Footer />
-      <h1>Home</h1>
-      <Link to={"/products"}><button>View Products</button></Link>
+       <Navbar />
+       <Hero />
+       <Categories
+        activeCategory={activeCategory}
+        setActiveCategory={setActiveCategory}/>
+      <FeaturedDishes activeCategory={activeCategory} />
+      <MenuSection />
+      <Testimonials />
+      <Newsletter />
+      <Footer />
     </div>
   )
 }
