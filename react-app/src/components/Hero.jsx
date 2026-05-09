@@ -437,6 +437,8 @@ export default function Hero() {
               🌍 World Cuisine Explorer
             </span>
 
+            
+
             <h1 className="hero__title">
               Discover the
               <br />
