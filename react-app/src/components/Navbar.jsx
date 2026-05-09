@@ -77,6 +77,7 @@ export default function Navbar() {
           Order Now
         </a> 
         </Link>
+        
       </div>
       <div>
         <style>
